@@ -1,0 +1,232 @@
+/* Variables de colors vius */
+:root {
+    --color-primari: #ff6f61;
+    --color-secundari: #2d3e50;
+    --color-fons: #fef6e4;
+    --color-text: #333333;
+    --color-text-clau: #ffffff;
+    --color-accent: #f8b400;
+    --color-botons-hover: #ff9a8b;
+    --color-gradient: linear-gradient(135deg, #ff6f61, #f8b400);
+}
+
+/* Reset bàsic */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-fons);
+    line-height: 1.6;
+}
+
+/* Contenidor global */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header */
+header {
+    background: var(--color-gradient);
+    padding: 1rem 0;
+    color: var(--color-text-clau);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    max-height: 50px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-list a {
+    color: var(--color-text-clau);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-list a:hover {
+    color: var(--color-accent);
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--color-text-clau);
+}
+
+/* Banner */
+.banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('festival-placeholder.jpg') center/cover no-repeat;
+    color: var(--color-text-clau);
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    background: var(--color-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Informació del festival */
+.info-festival {
+    padding: 4rem 2rem;
+    background: var(--color-gradient);
+    color: var(--color-text-clau);
+    margin: 2rem 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-festival ul {
+    list-style: none;
+}
+
+.info-festival img {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 10px;
+}
+
+/* Galeria d'artistes */
+.galeria-artistes {
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* Responsivitat per columnes */
+@media (min-width: 1200px) {
+    .galeria-artistes {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .galeria-artistes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .galeria-artistes {
+        grid-template-columns: 1fr;
+    }
+}
+
+.galeria-artistes img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-artistes img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Section */
+.media-section {
+    padding: 4rem 2rem;
+    background-color: var(--color-fons);
+}
+
+video, audio {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Formulari */
+.contact-form {
+    background-color: var(--color-secundari);
+    color: var(--color-text-clau);
+    padding: 3rem 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form button {
+    background-color: var(--color-primari);
+    color: var(--color-text-clau);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.contact-form button:hover {
+    background-color: var(--color-botons-hover);
+    transform: translateY(-2px);
+}
+
+/* Peu de pàgina */
+footer {
+    background-color: var(--color-secundari);
+    color: var(--color-text-clau);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsivitat */
+@media (max-width: 767px) {
+    .header-container {
+        flex-direction: column;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        background: var(--color-secundari);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+}
