@@ -1,15 +1,3 @@
-/* Variables de colors */
-:root {
-    --color-primari: #ff6f61;
-    --color-secundari: #2d3e50;
-    --color-fons: #fef6e4;
-    --color-text: #333333;
-    --color-text-clau: #ffffff;
-    --color-accent: #f8b400;
-    --color-botons-hover: #ff9a8b;
-    --color-gradient: linear-gradient(135deg, #ff6f61, #f8b400);
-}
-
 /* Reset bàsic */
 * {
     margin: 0;
@@ -19,8 +7,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: var(--color-text);
-    background-color: var(--color-fons);
+    color: #333333;
+    background-color: #fef6e4;
     line-height: 1.6;
 }
 
@@ -33,81 +21,146 @@ body {
 
 /* Header */
 header {
-    background: var(--color-gradient);
-    padding: 1rem 0;
-    color: var(--color-text-clau);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #ff6f61, #f8b400);
+    padding: 1.5rem 0;
+    color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .logo {
-    max-height: 50px;
+    max-height: 60px;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
 }
 
 .nav-list {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .nav-list a {
-    color: var(--color-text-clau);
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
+    position: relative;
+    padding: 0.5rem 0;
     transition: color 0.3s;
 }
 
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #f8b400;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-list a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
 .nav-list a:hover {
-    color: var(--color-accent);
+    color: #f8b400;
 }
 
 .hamburger {
     display: none;
-    font-size: 2rem;
+    font-size: 2.5rem;
     background: none;
     border: none;
-    color: var(--color-text-clau);
+    color: #ffffff;
+    cursor: pointer;
 }
 
 /* Banner */
 .banner {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('festival-placeholder.jpg') center/cover no-repeat;
-    color: var(--color-text-clau);
+    color: #ffffff;
     text-align: center;
-    padding: 6rem 2rem;
+    padding: 8rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .banner h1 {
-    font-size: 3rem;
-    background: var(--color-gradient);
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, #ff6f61, #f8b400);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.banner p {
+    font-size: 1.5rem;
+    max-width: 800px;
 }
 
 /* Informació del festival */
 .info-festival {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
     padding: 4rem 2rem;
-    background: var(--color-gradient);
-    color: var(--color-text-clau);
+    background: linear-gradient(135deg, #ff6f61, #f8b400);
+    color: #ffffff;
     margin: 2rem 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.info-festival-text {
+    flex: 1;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
 }
 
 .info-festival ul {
     list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.info-festival ul li {
+    margin: 0.5rem 0;
+    font-size: 1rem;
 }
 
 .info-festival img {
     width: 100%;
-    max-width: 600px;
-    display: block;
-    margin: 1rem auto;
-    border-radius: 10px;
+    max-width: 400px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-festival img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Galeria d'artistes */
@@ -153,7 +206,7 @@ header {
 /* Media Section */
 .media-section {
     padding: 4rem 2rem;
-    background-color: var(--color-fons);
+    background-color: #fef6e4;
 }
 
 video, audio {
@@ -163,47 +216,105 @@ video, audio {
 
 /* Formulari */
 .contact-form {
-    background-color: var(--color-secundari);
-    color: var(--color-text-clau);
+    background-color: #2d3e50;
+    color: #ffffff;
     padding: 3rem 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 2rem auto;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f8b400;
 }
 
 .contact-form label {
     display: block;
     margin: 1rem 0 0.5rem;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #ffffff;
 }
 
 .contact-form input, .contact-form textarea {
     width: 100%;
-    padding: 0.8rem;
+    padding: 1rem;
     margin-bottom: 1.5rem;
-    border: none;
-    border-radius: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    background-color: #3b4a60;
+    color: #ffffff;
+    font-size: 1rem;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #ff6f61;
+    box-shadow: inset 0 2px 10px rgba(255, 111, 97, 0.2);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
 }
 
 .contact-form button {
-    background-color: var(--color-primari);
-    color: var(--color-text-clau);
+    background-color: #ff6f61;
+    color: #ffffff;
     padding: 1rem 2rem;
     border: none;
-    border-radius: 5px;
-    font-size: 1rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+    margin-top: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form button:hover {
-    background-color: var(--color-botons-hover);
-    transform: translateY(-2px);
+    background-color: #ff9a8b;
+    transform: translateY(-3px);
 }
+
+.contact-form button:active {
+    transform: translateY(1px);
+}
+
+/* Estil per a missatge d'èxit o error */
+.contact-form .form-status {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.contact-form .form-status.success {
+    color: #f8b400;
+}
+
+.contact-form .form-status.error {
+    color: #ff6f61;
+}
+
 
 /* Peu de pàgina */
 footer {
-    background-color: var(--color-secundari);
-    color: var(--color-text-clau);
+    background-color: #2d3e50;
+    color: #ffffff;
     text-align: center;
     padding: 2rem 0;
     margin-top: 2rem;
@@ -223,7 +334,7 @@ footer {
     .nav-list {
         display: none;
         flex-direction: column;
-        background: var(--color-secundari);
+        background: #2d3e50;
         position: absolute;
         top: 100%;
         left: 0;
