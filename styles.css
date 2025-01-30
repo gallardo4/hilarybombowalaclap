@@ -1,4 +1,4 @@
-/* Variables de colors vius */
+/* Variables de colors */
 :root {
     --color-primari: #ff6f61;
     --color-secundari: #2d3e50;
@@ -111,6 +111,10 @@ header {
 }
 
 /* Galeria d'artistes */
+.artistes-destacats {
+    margin: 2rem;
+}
+
 .galeria-artistes {
     display: grid;
     gap: 1.5rem;
