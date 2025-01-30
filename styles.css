@@ -336,17 +336,16 @@ footer .social-icons {
     margin-top: 1rem;
 }
 
-footer .social-icons a {
-    background-color: #ff6f61;
+footer .social-icons img {
     padding: 0.6rem;
     border-radius: 50%;
     display: inline-block;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    width: 45px;
+    width: 60px;
+    height: 60px;
 }
 
-footer .social-icons a:hover {
-    background-color: #f8b400;
+footer .social-icons img:hover {
     transform: scale(1.1);
 }
 
