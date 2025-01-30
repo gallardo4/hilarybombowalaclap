@@ -121,23 +121,13 @@ header {
 
 /* Informació del festival */
 .info-festival {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
     padding: 4rem 2rem;
     background: linear-gradient(135deg, #ff6f61, #f8b400);
     color: #ffffff;
     margin: 2rem 0;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.info-festival-text {
-    flex: 1;
-    text-align: left;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
-    line-height: 1.8;
+    border-radius: 12px;
+    text-align: center;
 }
 
 .info-festival ul {
@@ -148,12 +138,14 @@ header {
 
 .info-festival ul li {
     margin: 0.5rem 0;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 .info-festival img {
     width: 100%;
-    max-width: 400px;
+    max-width: 600px;
+    display: block;
+    margin: 1.5rem auto;
     border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -162,6 +154,7 @@ header {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
 
 /* Galeria d'artistes */
 .artistes-destacats {
@@ -187,6 +180,10 @@ header {
 }
 
 @media (max-width: 767px) {
+    body {
+        min-width: 650px;
+    }
+
     .galeria-artistes {
         grid-template-columns: 1fr;
     }
