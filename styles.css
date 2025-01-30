@@ -294,23 +294,6 @@ video, audio {
     transform: translateY(1px);
 }
 
-/* Estil per a missatge d'èxit o error */
-.contact-form .form-status {
-    margin-top: 1rem;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1rem;
-}
-
-.contact-form .form-status.success {
-    color: #f8b400;
-}
-
-.contact-form .form-status.error {
-    color: #ff6f61;
-}
-
-
 /* Peu de pàgina */
 footer {
     background-color: #2d3e50;
